@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import physical_therapist from "../assets/physical_therapist.webp"
 import Image from 'next/image';
 import athome from "../assets/athome_pt.jpg"
 import balance from "../assets/balance_pt.jpg"

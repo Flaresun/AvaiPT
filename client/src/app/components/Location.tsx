@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 import map from "../assets/map.png"
-import Image from 'next/image'
+import Image from "next/image"
 const Location = () => {
   return (
     <div className="px-[3rem] bg-slate-100 pt-1 pb-5">
@@ -26,7 +26,7 @@ const Location = () => {
 
             <div className="flex flex-col mb-5">
               <h1 className="text-2xl">Serving Communities Across Ohio</h1>
-              <p className="text-lg font-light">At AVAI PT, we're proud to actively serve a growing list of counties throughout Ohio—including Cuyahoga, Franklin, Hamilton, Summit, Montgomery, and more. These communities represent more than just locations—they're where we bring healing home.</p>
+              <p className="text-lg font-light">At AVAI PT, we are proud to actively serve a growing list of counties throughout Ohio—including Cuyahoga, Franklin, Hamilton, Summit, Montgomery, and more. These communities represent more than just locations—they are where we bring healing home.</p>
             </div>
 
             <div className="flex flex-col mb-5">
@@ -36,7 +36,7 @@ const Location = () => {
 
             <div className="flex flex-col">
               <h1 className="text-2xl">Why Clients Trust AVAI PT</h1>
-              <p className="text-lg font-light">We know inviting someone into your home for care is a big decision. That's why AVAI PT is built on transparency, professionalism, and personal connection. Our licensed therapists are not only clinically skilled—they're empathetic, respectful, and committed to your well-being. With strict adherence to HIPAA, Medicare, and Ohio regulations, you can feel confident knowing your care is safe, compliant, and personalized.</p>
+              <p className="text-lg font-light">We know inviting someone into your home for care is a big decision. That is why AVAI PT is built on transparency, professionalism, and personal connection. Our licensed therapists are not only clinically skilled—they are empathetic, respectful, and committed to your well-being. With strict adherence to HIPAA, Medicare, and Ohio regulations, you can feel confident knowing your care is safe, compliant, and personalized.</p>
             </div>
 
           </div>
