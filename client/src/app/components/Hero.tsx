@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import hero_logo from "../assets/physical_therapist-rounded.png"
-import light_logo from "../assets/light_logo.png"
 import { TiLocationArrow } from "react-icons/ti";
 
 const Hero = () => {
