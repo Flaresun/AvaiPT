@@ -1,0 +1,10 @@
+#hero-cover {
+    background-image: url("../assets/hero_img.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+

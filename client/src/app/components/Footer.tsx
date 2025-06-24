@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React from 'react';
-import logo from '../assets/light_logo.png';
 
 const Footer = () => {
   const date = new Date();
@@ -12,7 +11,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-start justify-between gap-8">
           {/* Logo */}
           <div className="flex">
-            <Image src={logo} alt="AVAI PT Logo" width={150} />
+            {/*<Image src={logo} alt="AVAI PT Logo" width={150} />*/}
           </div>
 
           {/* About Us */}

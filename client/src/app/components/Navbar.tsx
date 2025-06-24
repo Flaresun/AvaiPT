@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import Image from "next/image";
-import logo from "../../../public/light_logo.png"
+import logo from "../../../public/logo.png"
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from 'react';
 import { IoIosArrowDown } from "react-icons/io";
@@ -23,13 +23,15 @@ const Navbar = () => {
     <div onMouseLeave={() => {
         setAboutMenu(false);
         setServicesMenu(false);
-    }} className="px-[3rem] sticky top-0 bg-white">
+    }} className="px-[3rem]">
         <div className="flex flex-row items-center justify-between text-center text-xl lg:text-2xl font-medium  ">
-            <div className="flex ">
-                <Image src={logo} alt="Logo" width={150}/>
+            
+            <div className="flex items-center justify-center">
+                <Image src={logo} alt="Logo" width={100}/>
+                <h1 className="font-semibold text-2xl">AVAIPT</h1>
             </div>
 
-            <div className="hidden xl:flex flex-row justify-between text-center gap-10 ">
+            <div className="hidden lg:flex flex-row justify-between text-center ">
                         <div className="cursor-pointer flex  items-center justify-center px-4 p-1 gap-1">
                             <a href="" className="">Home</a>
                         </div>
@@ -62,7 +64,7 @@ const Navbar = () => {
                             </span>
                             {servicesMenu && (
                                 <div className="cursor-pointer absolute top-[100%] right-[-40] flex flex-col bg-white shadow-lg px-6 py-4 items-center rounded-md text-nowrap ">
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-    ">
                                         <a href="" className="">In-Home Physical Therapy Evaluations</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
@@ -89,14 +91,12 @@ const Navbar = () => {
                         </div>
             </div>
 
-            <div className="hidden xl:flex">
+            <div className="hidden lg:flex">
                 <button title='button-1' className="cursor-pointer px-5 hover:text-sky-600 active:scale-[.95]">Login</button>
-                <button title='button-2' className="cursor-pointer border-4 rounded-full p-3 active:scale-[.95]">Get Started</button>
-
             </div>
             
             {/** Hamburger Icon showing on lg and below screens */}
-            <div className="flex xl:hidden relative">
+            <div className="flex lg:hidden relative">
 
                 <button title='button-3' onClick={() => setHamburgerMenu((prev) => !prev)} className="cursor-pointer"><RxHamburgerMenu size={50} /></button>
                 {hamburgerMenu && (

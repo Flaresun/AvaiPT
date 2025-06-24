@@ -4,12 +4,15 @@ import Services from "./components/Services";
 import Pros from "./components/Pros";
 import Location from "./components/Location";
 import Footer from "./components/Footer";
-
+import "./components/Hero.css"
 export default function Home() {
   return (
     <div className="">
-      <Navbar />
-      <Hero />
+      <div id="hero-cover" className="flex flex-col">
+        <Navbar />
+        <Hero />
+      </div>
+      
       <Pros />
       <Services />
       <Location />
