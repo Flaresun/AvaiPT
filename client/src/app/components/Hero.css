@@ -3,8 +3,16 @@
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
-    height: 100vh;
 }
 
+@media only screen and (min-width: 500px) {
+    #hero-cover {
+        height: 70vh;
+    }
+}
 
-
+@media only screen and (min-width: 1000px) {
+    #hero-cover {
+        height: 100vh;
+    }
+}

@@ -52,7 +52,7 @@ const Services = () => {
     ];
 
   return (
-    <div className='px-[3rem] pb-5'>
+    <div className='px-[3rem] pb-5 bg-gradient-to-b from-[#fffffff] to-[#cac9d3]'>
         <div className="flex flex-col mt-10 md:mt-30 items-center text-center text-4xl">
 
             <div className="flex text-5xl my-5">    
@@ -64,7 +64,7 @@ const Services = () => {
 
                     <div key={index} className="flex flex-col p-4 rounded-4xl shadow-md bg-white">
                         <div className="bg-gray-100 mb-4 flex items-center justify-center">
-                            <Image src={value.image} alt="" className='inline' />
+                            <Image src={value.image} alt="" className='inline' draggable="false" />
                         </div>
 
                         <div className="flex flex-col">
