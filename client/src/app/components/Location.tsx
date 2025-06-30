@@ -10,7 +10,7 @@ const Location = () => {
           <p className="text-5xl">Active Locations</p>
         </div>
 
-        <div className="mx-[5rem] flex flex-col md:flex-row justify-around">
+        <div className="md:mx-[5rem] flex flex-col md:flex-row justify-around">
 
           <div className="flex flex-col w-full md:w-[150%]">
             <div className="flex">

@@ -19,7 +19,7 @@ export default function Carousel ({items}: CarouselProps) {
     const touchStartX = useRef<number>(0);
     const touchEndX = useRef<number>(0);
     const arrowSize : number = 50;
-    const minSwipeDistance = 100; // px
+    const minSwipeDistance = 50; // px
 
     const next = () => {
         setCurr((curr) => curr === items.length-1 ? 0 : curr +1);

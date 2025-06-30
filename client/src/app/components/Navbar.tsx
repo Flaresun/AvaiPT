@@ -22,8 +22,7 @@ const Navbar = () => {
 
     const toggleMenu = (e:React.MouseEvent, setter:React.Dispatch<React.SetStateAction<boolean>>) => {
         e.preventDefault();
-        closeAllMenus();
-        setter(true)
+        setter((prev) => !prev);
     }
 
     useEffect(() => {
@@ -60,61 +59,61 @@ const Navbar = () => {
 
             <div className="hidden lg:flex flex-row justify-between text-center gap-10 ">
                         <div className="cursor-pointer flex  items-center justify-center ">
-                            <a href="" className="">Home</a>
+                            <a href="#" className="">Home</a>
                         </div>
                         <div onMouseOver={(e) => toggleMenu(e,setAboutMenu)} className={`${aboutMenu && "[&_span]:rotate-180"} cursor-pointer flex items-center justify-center gap-1 hover:[&_span]:rotate-180 relative`}>
-                            <a href="" className="">About</a>
+                            <a href="#" className="">About</a>
                             <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                             {aboutMenu && (
                                  <div className="cursor-pointer absolute top-[100%] right-[-40] flex flex-col bg-white shadow-lg px-6 py-4  items-center rounded-md text-nowrap">
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="" className="">Mission</a>
+                                        <a href="#" className="">Mission</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="" className="">Partners</a>
+                                        <a href="#" className="">Partners</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Testimonials</a>
+                                        <a href="#" className="">Testimonials</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Privacy Policy</a>
+                                        <a href="#" className="">Privacy Policy</a>
                                     </div>
                                 </div>
                             )}
                             
                         </div>
 
-                        <div onMouseOver={(e) => toggleMenu(e, setServicesMenu)} className={`${servicesMenu && "[&_span]:rotate-180"} relative cursor-pointer flex items-center justify-center gap-1 hover:[&_span]:rotate-180`}>
-                            <a href="">Services</a>
+                        <div onMouseOver={(e) => toggleMenu(e, setServicesMenu)} className={`${servicesMenu && "[&_span]:rotate-180"} relative cursor-pointer flex items-center justify-center gap-1 ${servicesMenu ? "hover:[&_span]:rotate-180" : ""}`}>
+                            <a href="#">Services</a>
                             <span className="transition delay-75 duration-300 ease-in-out">
                                 <IoIosArrowDown />
                             </span>
                             {servicesMenu && (
                                 <div className="cursor-pointer absolute top-[100%] right-[-40] flex flex-col bg-white shadow-lg px-6 py-4 items-center rounded-md text-nowrap ">
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-    ">
-                                        <a href="" className="">In-Home Physical Therapy Evaluations</a>
+                                        <a href="#" className="">In-Home Physical Therapy Evaluations</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="" className="">Follow-up and Post-Operative Rehab</a>
+                                        <a href="#" className="">Follow-up and Post-Operative Rehab</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Neuromuscular Re-education & Balance Training</a>
+                                        <a href="#" className="">Neuromuscular Re-education & Balance Training</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Telehealth Therapy Options</a>
+                                        <a href="#" className="">Telehealth Therapy Options</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Discharge Planning & Care Coordination</a>
+                                        <a href="#" className="">Discharge Planning & Care Coordination</a>
                                     </div>
                                 </div>
                             )}
                         </div>
 
                         <div className="cursor-pointer flex items-center justify-center">
-                            <a href="" className="">Contact</a>
+                            <a href="#" className="">Contact</a>
                         </div>
                         <div className="cursor-pointer flex items-center justify-center">
-                            <a href="" className="">Locations</a>
+                            <a href="#" className="">Locations</a>
                         </div>
             </div>
 
@@ -127,55 +126,58 @@ const Navbar = () => {
 
                 <button title='button-3' onClick={() => setHamburgerMenu((prev) => !prev)} className="cursor-pointer pr-2"><RxHamburgerMenu size={50} /></button>
                 {hamburgerMenu && (
-                    <div className="cursor-pointer absolute top-[100%] right-[0%] flex flex-col bg-sky-300 items-center rounded-md ">
+                    <div className=" text-sm cursor-pointer absolute top-[100%] right-[0%] flex flex-col bg-sky-300 items-center rounded-md ">
                         <div className="flex  items-center justify-center px-4 p-1 gap-1">
-                            <a href="" className="">Home</a>
+                            <a href="#" className="">Home</a>
                         </div>
-                        <div onMouseOver={(e) => toggleMenu(e, setAboutMenu)} className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 gap-1 hover:[&_span]:rotate-180">
-                            <a href="" className="">About</a>
+                        <div onClick={(e) => toggleMenu(e, setAboutMenu)} className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 gap-1 hover:[&_span]:rotate-180">
+                            <a href="#" className="">About</a>
                             <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                             {aboutMenu && (
-                                 <div className="z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-6 py-4  items-center rounded-md text-nowrap">
+                                 <div className="text-nowrap z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-6 py-4  items-center rounded-md">
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="" className="">Mission</a>
+                                        <a href="#" className="">Mission</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="" className="">Partners</a>
+                                        <a href="#" className="">Partners</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Testimonials</a>
+                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                                        <a href="#" className="">Testimonials</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Privacy Policy</a>
+                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                                        <a href="#" className="">Privacy Policy</a>
                                     </div>
                                 </div>
                             )}
                         </div>
-                        <div onMouseOver={(e) => toggleMenu(e, setServicesMenu)} className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 hover:[&_span]:rotate-180">
-                            <a href="" className="">Services</a>
+                        <div onClick={(e) => toggleMenu(e, setServicesMenu)} className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 hover:[&_span]:rotate-180">
+                            <a href="#" className="">Services</a>
                             <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                             {servicesMenu && (
-                                 <div className="z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-6 py-4  items-center rounded-md text-nowrap">
+                                 <div className="text-nowrap z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-1 py-4  items-center rounded-md">
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="" className="">Mission</a>
+                                        <a href="#" className="">In-Home Physical Therapy Evaluations</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="" className="">Partners</a>
+                                        <a href="#" className="">Follow-up and Post-Operative Rehab</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Testimonials</a>
+                                        <a href="#" className="">Neuromuscular Re-education & Balance Training</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
-                                        <a href="" className="">Privacy Policy</a>
+                                        <a href="#" className="">Telehealth Therapy Options</a>
+                                    </div>
+                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                                        <a href="#" className="">Discharge Planning & Care Coordination</a>
                                     </div>
                                 </div>
                             )}
                         </div>
                         <div className="flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1">
-                            <a href="" className="">Contact</a>
+                            <a href="#" className="">Contact</a>
                         </div>
                         <div className="flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1">
-                            <a href="" className="">Locations</a>
+                            <a href="#" className="">Locations</a>
                         </div>
                     </div>
                 )}
