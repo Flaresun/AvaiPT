@@ -24,12 +24,16 @@ const Navbar = () => {
         e.preventDefault();
         setter((prev) => !prev);
     }
+    const openMenu = (e:React.MouseEvent, setter:React.Dispatch<React.SetStateAction<boolean>>) => {
+        e.preventDefault();
+        setter(true);
+    }
 
     useEffect(() => {
         lastScrollTop.current = window.pageYOffset || document.documentElement.scrollTop;
         const scrollChange = () => {
             closeAllMenus();
-
+            
             const st = window.pageYOffset || document.documentElement.scrollTop;
             setWindowScroll(window.scrollY);
             if (st > lastScrollTop.current) {
@@ -49,7 +53,7 @@ const Navbar = () => {
     <header onMouseLeave={() => {
         setAboutMenu(false);
         setServicesMenu(false);
-    }} className={`mt-[1rem] mx-auto max-w-[76rem] w-full fixed left-0 right-0 top-0 transition-all duration-300 ease-spring z-[12]  ${windowScroll != 0 ? "rounded-3xl ring-1 ring-black/5 bg-white/76 backdrop-blur-lg shadow-lg" : ""}`} style={{transform: `translateY(-${toggleNav}px)`}}>
+    }} className={`mt-[1rem] mx-auto max-w-[22rem] md:max-w-[76rem] w-full fixed left-0 right-0 top-0 transition-all duration-300 ease-spring z-[12]  ${windowScroll != 0 ? "rounded-3xl ring-1 ring-black/5 bg-white/76 backdrop-blur-lg shadow-lg" : ""}`} style={{transform: `translateY(-${toggleNav}px)`}}>
         <nav className="flex flex-row items-center justify-between text-center text-lg font-medium">
             
             <div className="flex items-center justify-center pl-2">
@@ -61,7 +65,7 @@ const Navbar = () => {
                         <div className="cursor-pointer flex  items-center justify-center ">
                             <a href="#" className="">Home</a>
                         </div>
-                        <div onMouseOver={(e) => toggleMenu(e,setAboutMenu)} className={`${aboutMenu && "[&_span]:rotate-180"} cursor-pointer flex items-center justify-center gap-1 hover:[&_span]:rotate-180 relative`}>
+                        <div onMouseOver={(e) => openMenu(e,setAboutMenu)} className={`${aboutMenu && "[&_span]:rotate-180"} cursor-pointer flex items-center justify-center gap-1 hover:[&_span]:rotate-180 relative`}>
                             <a href="#" className="">About</a>
                             <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                             {aboutMenu && (
@@ -83,7 +87,7 @@ const Navbar = () => {
                             
                         </div>
 
-                        <div onMouseOver={(e) => toggleMenu(e, setServicesMenu)} className={`${servicesMenu && "[&_span]:rotate-180"} relative cursor-pointer flex items-center justify-center gap-1 ${servicesMenu ? "hover:[&_span]:rotate-180" : ""}`}>
+                        <div onMouseOver={(e) => openMenu(e, setServicesMenu)} className={`${servicesMenu && "[&_span]:rotate-180"} relative cursor-pointer flex items-center justify-center gap-1 ${servicesMenu ? "hover:[&_span]:rotate-180" : ""}`}>
                             <a href="#">Services</a>
                             <span className="transition delay-75 duration-300 ease-in-out">
                                 <IoIosArrowDown />
