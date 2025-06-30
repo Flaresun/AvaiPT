@@ -34,7 +34,7 @@ const Navbar = () => {
             setWindowScroll(window.scrollY);
             if (st > lastScrollTop.current) {
                 // Down scroll
-                setToggleNav(60);
+                setToggleNav(70);
             } 
             else if (st < lastScrollTop.current) {
                 // Up scroll 
