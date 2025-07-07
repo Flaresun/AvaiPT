@@ -1,25 +1,40 @@
+"use client";
 import React from "react"
 import map from "../assets/map.png"
 import Image from "next/image"
+import { useEffect } from "react"
 const Location = () => {
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("show-class");
+
+        })
+    });
+    const hiddenElements = document.querySelectorAll(".hide-class")
+    hiddenElements.forEach((element) => observer.observe(element));
+  },[])
   return (
     <div className="px-[2rem] md:px-[3rem] bg-gradient-to-b from-[#cac9d3] to-[#ffffff] pt-1 pb-5">
       <div className="flex flex-col mt-20 ">
 
-        <div className="flex items-center text-center justify-center mb-10">
+        <div className="hide-class flex items-center text-center justify-center mb-10">
           <p className="text-5xl">Active Locations</p>
         </div>
 
         <div className="md:mx-[5rem] flex flex-col md:flex-row justify-around">
 
           <div className="flex flex-col w-full md:w-[150%]">
-            <div className="flex">
+            <div className="hide-class flex">
               <Image src={map} alt="" />
             </div>
             
           </div>
 
-          <div className="flex flex-col items-center gap-20 md:ml-10">
+          <div className="flex flex-col items-center gap-20 md:ml-10 hide-class">
 
             <div className="flex flex-col mb-5">
               <h1 className="text-2xl">Serving Communities Across Ohio</h1>

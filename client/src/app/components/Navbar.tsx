@@ -26,6 +26,7 @@ const Navbar = () => {
     }
     const openMenu = (e:React.MouseEvent, setter:React.Dispatch<React.SetStateAction<boolean>>) => {
         e.preventDefault();
+        closeAllMenus();
         setter(true);
     }
 
@@ -51,8 +52,7 @@ const Navbar = () => {
     
   return (
     <header onMouseLeave={() => {
-        setAboutMenu(false);
-        setServicesMenu(false);
+        closeAllMenus();
     }} className={`mt-[1rem] mx-auto max-w-[22rem] md:max-w-[76rem] w-full fixed left-0 right-0 top-0 transition-all duration-300 ease-spring z-[12]  ${windowScroll != 0 ? "rounded-3xl ring-1 ring-black/5 bg-white/76 backdrop-blur-lg shadow-lg" : ""}`} style={{transform: `translateY(-${toggleNav}px)`}}>
         <nav className="flex flex-row items-center justify-between text-center text-lg font-medium">
             

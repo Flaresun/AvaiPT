@@ -58,7 +58,7 @@ export default function Carousel ({items}: CarouselProps) {
                 </div>
             </div>
 
-            <div className="flex flex-row my-5 md:my-10" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+            <div className="text-xl flex flex-row my-5" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
                 {items.map((value,index) => (
                     <div key={index} className=" md:px-10 flex flex-col min-w-[100%] md:min-w-[50%]  transition-all ease-out duration-500 " style={{transform: `translateX(-${curr * 100}%)`}}>
                         <div className="flex flex-col p-4 rounded-4xl shadow-md bg-gradient-to-b from-[#a0a0a0] to-[#f2f1f1] h-full">
@@ -71,8 +71,8 @@ export default function Carousel ({items}: CarouselProps) {
                             </div>
 
                             <div className="flex flex-col items-center text-center w-full ">
-                                <h1 className="font-semibold text-xl md:text-4xl my-5 ">{value.title}</h1>
-                                <p className="font-light text-xl md:text-2xl">{value.desc}</p>
+                                <h1 className="font-semibold my-5 ">{value.title}</h1>
+                                <p className="font-light">{value.desc}</p>
                             </div>
                         </div>
                     </div>

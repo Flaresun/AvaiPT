@@ -5,6 +5,7 @@ import Pros from "./components/Pros";
 import Location from "./components/Location";
 import Footer from "./components/Footer";
 import "./components/Hero.css"
+import "./components/Animation.css"
 export default function Home() {
   return (
     <div className="">
