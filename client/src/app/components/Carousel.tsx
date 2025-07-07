@@ -60,7 +60,7 @@ export default function Carousel ({items}: CarouselProps) {
 
             <div className="text-xl flex flex-row my-5" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
                 {items.map((value,index) => (
-                    <div key={index} className=" md:px-10 flex flex-col min-w-[100%] md:min-w-[50%]  transition-all ease-out duration-500 " style={{transform: `translateX(-${curr * 100}%)`}}>
+                    <div key={index} className=" md:px-10 flex flex-col min-w-[100%] xl:min-w-[50%]  transition-all ease-out duration-500 " style={{transform: `translateX(-${curr * 100}%)`}}>
                         <div className="flex flex-col p-4 rounded-4xl shadow-md bg-gradient-to-b from-[#a0a0a0] to-[#f2f1f1] h-full">
                             <div className="flex flex-row font-semibold mb-2">
                                 <span className='p-2 '>{index+1 < 10 ? `0${index+1}` : index+1}</span>

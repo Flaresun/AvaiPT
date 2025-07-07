@@ -16,19 +16,21 @@
         transition: none;
     }
 }
+@media only screen and (min-width: 1000px) {
+    .services-class:nth-child(2) {
+        transition-delay: 200ms;
+    }
+    .services-class:nth-child(3) {
+        transition-delay: 400ms;
+    }
+    .services-class:nth-child(4) {
+        transition-delay: 200ms;
+    }
+    .services-class:nth-child(5) {
+        transition-delay: 400ms;
+    }
+    .services-class:nth-child(6) {
+        transition-delay: 600ms;
+    }
+}
 
-.services-class:nth-child(2) {
-    transition-delay: 200ms;
-}
-.services-class:nth-child(3) {
-    transition-delay: 400ms;
-}
-.services-class:nth-child(4) {
-    transition-delay: 200ms;
-}
-.services-class:nth-child(5) {
-    transition-delay: 400ms;
-}
-.services-class:nth-child(6) {
-    transition-delay: 600ms;
-}

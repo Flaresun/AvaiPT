@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="px-[3rem] pt-5 mt-10 bg-black text-white text-lg">
       <div className="flex flex-col">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:mx-[10rem]">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8 xl:mx-[10rem]">
           {/* Logo */}
           <div className="flex flex-col items-center justify-center max-h-full">
             {<Image className=""src={logo} alt="AVAI PT Logo" width={75} />}
