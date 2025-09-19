@@ -6,6 +6,7 @@ import Location from "./components/Location";
 import Footer from "./components/Footer";
 import "./components/Hero.css"
 import "./components/Animation.css"
+import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <div className="">
@@ -16,6 +17,7 @@ export default function Home() {
       
       <Pros />
       <Services />
+      <Testimonials />
       <Location />
       <Footer />
     </div>

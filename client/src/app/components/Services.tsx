@@ -18,43 +18,42 @@ const Services = () => {
             image: athome,
             title: "In-Home Physical Therapy Evaluations",
             desc: "Comprehensive assessments conducted in the comfort of your home to create personalized therapy plans tailored to your needs.",
-            link: "/pte"
+            link: "/servicesInHome"
         },
         {
             image: followUp,
             title: "Follow-up and Post-Operative Rehab",
             desc: "Focused rehabilitation sessions that support recovery after surgery and ensure optimal outcomes through consistent follow-ups.",
-            link: "/pte"
+            link: "/servicesFollowUp"
         },
         {
             image: balance,
             title: "Neuromuscular Re-education & Balance Training",
             desc: "Specialized therapies designed to improve coordination, strength, and balance—reducing the risk of falls and enhancing mobility.",
-            link: "/pte"
+            link: "/servicesNeuromuscular"
         },
         {
             image: telehealth,
             title: "Telehealth Therapy Options",
             desc: "Secure, remote physical therapy sessions that bring professional guidance to your screen—ideal for convenience and flexibility.",
-            link: "/pte"
+            link: "/servicesTelehealth"
         },
         {
             image: discharge,
             title: "Discharge Planning & Care Coordination",
             desc: "Collaborative planning to ensure smooth transitions from therapy to independent living, with coordinated care across providers.",
-            link: "/pte"
+            link: "/servicesDischarge"
         },
         {
             image: freept,
             title: "Strength Training & Functional Conditioning",
             desc: "We design customized strength-building programs to enhance stability, endurance, and functional performance.",
-            link: "/pte"
+            link: "/servicesStrength"
         }
     ];
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                console.log(entry);
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add("show-class");
 
@@ -68,15 +67,15 @@ const Services = () => {
     <div className='px-[3rem] pb-5 bg-gradient-to-b from-[#fffffff] to-[#cac9d3]'>
         <div className="flex flex-col mt-10 md:mt-30 items-center text-center text-4xl">
 
-            <div className="flex text-5xl my-5 hide-class">    
+            <div className="flex text-5xl my-5 hide-class text-green-900">    
                 Our Services
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6  ">
                 {services.map((value, index) => (
 
-                    <div key={index} className="services-class hide-class flex flex-col p-4 rounded-4xl shadow-md bg-white">
-                        <div className=" bg-gray-100 mb-4 flex items-center justify-center">
+                    <div key={index} className="services-class hide-class flex flex-col p-4 rounded-4xl max-w-xl shadow-md bg-white">
+                        <div className=" bg-gray-100  mb-4 flex items-center justify-center h-auto object-cover">
                             <Image src={value.image} alt="" className='inline' draggable="false" />
                         </div>
 

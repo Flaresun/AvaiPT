@@ -8,7 +8,6 @@ const Hero = () => {
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                console.log(entry);
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add("show-class");
 
@@ -20,12 +19,12 @@ const Hero = () => {
     
 
     return (
-        <div id="hero-cover" className="px-[3rem] py-20">
+        <div id="hero-cover" className="px-[3rem] py-20 max-w-full">
             <div className="flex lg:flex-row flex-col items-center justify-center">
                 <div className="flex flex-col max-w-5xl items-center text-center ">
                     {/**Text Portion */}
                     <div className="flex flex-col w-full">
-                        <p className="hide-class items-start font-medium text-3xl md:text-5xl xl:text-7xl">
+                        <p className="hide-class items-start font-medium text-3xl md:text-5xl xl:text-7xl text-green-900">
                             Where Skilled Therapy Meets Streamlined Delivery
                         </p>
                     </div>

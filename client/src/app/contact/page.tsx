@@ -4,8 +4,8 @@ import Navbar from '../components/Navbar'
 
 const page = () => {
   return (
-    <div>
-      <Navbar/>
+    <div className="min-h-screen bg-slate-200">
+      <Navbar />
       <Contact/>
     </div>
   )

@@ -1,15 +1,18 @@
+"use client";
 import Image from 'next/image';
 import React from 'react';
 import logo from "../../../public/logo.png"
+import { useRouter } from 'next/navigation';
 
 const Footer = () => {
   const date = new Date();
   const curYear = date.getFullYear();
+  const router = useRouter();
 
   return (
     <div className="px-[3rem] pt-5 mt-10 bg-black text-white text-lg">
       <div className="flex flex-col">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8 xl:mx-[10rem]">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-8 w-full max-w-7xl mx-auto">
           {/* Logo */}
           <div className="flex flex-col items-center justify-center max-h-full">
             {<Image className=""src={logo} alt="AVAI PT Logo" width={75} />}
@@ -20,7 +23,7 @@ const Footer = () => {
           <div className="flex flex-col items-start">
             <h1 className="font-extralight text-gray-600 mb-2">About Us</h1>
             <div className="flex flex-col text-base space-y-1">
-              <p className="cursor-pointer">Mission</p>
+              <p onClick={() => router.push("/contact")}  className="cursor-pointer">Book a Consultation</p>
               <p className="cursor-pointer">Partners</p>
             </div>
           </div>

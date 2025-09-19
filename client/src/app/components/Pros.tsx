@@ -28,7 +28,6 @@ const Pros = () => {
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
-                console.log(entry);
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add("show-class");
 
@@ -39,17 +38,17 @@ const Pros = () => {
     },[])
     
     return (
-        <div className='px-[1rem] md:px-[3rem] py-5 bg-gradient-to-b from-[#cac9d3] to-[#ffffff] w-full '>
+        <div className='px-[1rem] md:px-[3rem] py-5 mx-auto bg-gradient-to-b from-[#cac9d3] to-[#ffffff] w-full'>
 
-            <div className="flex flex-col text-3xl">
+            <div className="flex flex-col text-3xl w-auto mx-auto px-4">
                 <div className="flex hide-class">
                     <p className="">Features</p>
                 </div>
-                <div className="flex mt-5 font-medium text-5xl xl:text-7xl hide-class">
+                <div className="flex mt-5 font-medium text-5xl xl:text-7xl hide-class text-green-900">
                     <h1 className="">Get the Motion you Deserve</h1>
                 </div>
 
-                <div className="flex hide-class">
+                <div className="flex hide-class ">
                     <Carousel items={items} />
                 </div>
             </div>

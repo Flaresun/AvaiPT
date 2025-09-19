@@ -47,9 +47,9 @@ export default function Carousel ({items}: CarouselProps) {
     
 
     return (
-        <div className="flex flex-col mx-[2rem] lg:mx-[5rem] overflow-hidden">
+        <div className="flex flex-col w-full overflow-hidden  mx-auto">
 
-            <div className="flex justify-end">
+            <div className="flex justify-end ">
                 <div onClick={() => prev()} className="cursor-pointer hover:bg-slate-100 active:scale-[0.95] border rounded-full border-black p-1 mr-5">
                     <IoIosArrowBack size={arrowSize} />
                 </div>
@@ -58,16 +58,16 @@ export default function Carousel ({items}: CarouselProps) {
                 </div>
             </div>
 
-            <div className="text-xl flex flex-row my-5" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+            <div className="text-xl flex flex-row my-5 w-full max-w-6xl" onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
                 {items.map((value,index) => (
-                    <div key={index} className=" md:px-10 flex flex-col min-w-[100%] xl:min-w-[50%]  transition-all ease-out duration-500 " style={{transform: `translateX(-${curr * 100}%)`}}>
+                    <div key={index} className=" md:px-10 flex flex-col min-w-[100%] xl:min-w-[55%]  transition-all ease-out duration-500 " style={{transform: `translateX(-${curr * 100}%)`}}>
                         <div className="flex flex-col p-4 rounded-4xl shadow-md bg-gradient-to-b from-[#a0a0a0] to-[#f2f1f1] h-full">
                             <div className="flex flex-row font-semibold mb-2">
                                 <span className='p-2 '>{index+1 < 10 ? `0${index+1}` : index+1}</span>
                             </div>
                             
                             <div className="flex">
-                                    <Image src={value.img} alt="img" className='inline' draggable="false"/>
+                                    <Image src={value.img} alt="img" className='inline w-full max-w-3xl h-auto object-cover' draggable="false"/>
                             </div>
 
                             <div className="flex flex-col items-center text-center w-full ">

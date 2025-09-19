@@ -93,7 +93,7 @@ export default function ContactConsultForm({
 
 
   return (
-    <div className="min-h-screen mt-10 w-full bg-gradient-to-br text-slate-800 py-12 px-4">
+    <div className="bg-gradient-to-br text-slate-800 py-20 px-4">
       <div className="mx-auto max-w-3xl">
         <div className="mb-8 text-center">
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{title}</h1>
