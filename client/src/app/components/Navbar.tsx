@@ -19,7 +19,6 @@ const Navbar = () => {
     const closeAllMenus = () => {
         setAboutMenu(false);
         setServicesMenu(false);
-        setHamburgerMenu(false);
     }
 
     const toggleMenu = (e:React.MouseEvent, setter:React.Dispatch<React.SetStateAction<boolean>>, type:string) => {
@@ -133,8 +132,8 @@ const Navbar = () => {
                 <button title='button-3' onClick={() => setHamburgerMenu((prev) => !prev)} className="cursor-pointer pr-2"><RxHamburgerMenu size={50} /></button>
                 {hamburgerMenu && (
                     <div className=" text-sm cursor-pointer absolute top-[100%] right-[0%] flex flex-col bg-sky-300 items-center rounded-md ">
-                        <div onClick={(e) => toggleMenu(e, setAboutMenu, "about")} className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 gap-1 hover:[&_span]:rotate-180">
-                            <a href="#" className="">About</a>
+                        <div  className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 gap-1 hover:[&_span]:rotate-180">
+                            <a onClick={(e) => toggleMenu(e, setAboutMenu, "about")} className="">About</a>
                             <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                             {aboutMenu && (
                                  <div className="text-nowrap z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-6 py-4  items-center rounded-md">
@@ -143,13 +142,13 @@ const Navbar = () => {
                                         <a href="#" className="">Partners</a>
                                     </div>
                                     <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
-                                        <a href="#" className="">Privacy Policy</a>
+                                        <a href="/privacy" className="">Privacy Policy</a>
                                     </div>
                                 </div>
                             )}
                         </div>
-                        <div onClick={(e) => toggleMenu(e, setServicesMenu, "service")} className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 hover:[&_span]:rotate-180">
-                            <a href="" className="">Services</a>
+                        <div  className="relative flex hover:bg-sky-600 w-full items-center justify-center px-4 p-1 hover:[&_span]:rotate-180">
+                            <a onClick={(e) => toggleMenu(e, setServicesMenu, "service")} href="" className="">Services</a>
                             <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                             {servicesMenu && (
                                  <div className="text-nowrap z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-1 py-4  items-center rounded-md">

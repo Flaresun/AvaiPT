@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 
 const page = () => {
   return (
-    <div>
+    <div className='bg-gray-50'>
         <Navbar />
         <Privacy />
     </div>
