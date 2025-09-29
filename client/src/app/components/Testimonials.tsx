@@ -62,7 +62,7 @@ const Testimonials = () => {
             </div>
 
             <div className="max-w-4xl mb-10">
-                <p className="text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quos nihil, magni necessitatibus quasi consectetur alias voluptate debitis odio aliquam quia similique sapiente et, dolor, porro consequuntur exercitationem hic illo!</p>
+                <p className="text-2xl">See for yourself what previous and current patients have to say about working with AvaiPT </p>
             </div>
 
             {/**GRID */}
