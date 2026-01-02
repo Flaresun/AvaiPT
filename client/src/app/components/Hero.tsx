@@ -32,9 +32,10 @@ const Hero = () => {
                     <div className="flex mt-5 md:text-3xl text-lg hide-class">
                         <p className="">Therapy training designed to get you fit, active, and ready to make a difference.</p>
                     </div>
-
+                    {
+                    false &&
+                        (
                     <div className="flex md:flex-row flex-col pt-4 text-lg md:text-2xl pb-10 lg:pb-0 ">
-
                         <button className="hide-class cursor-pointer inline-flex items-center bg-sky-400 p-4 rounded-full md:mr-5 md:mb-0 mb-5 hover:bg-sky-300 active:scale-[.95]">
                         Learn More <TiLocationArrow className="ml-2 text-xl" />
                         </button>
@@ -43,7 +44,8 @@ const Hero = () => {
                         <span className="">Get Started</span><TiLocationArrow className="ml-2 text-xl " />
                         </button>
                     </div>
-
+                        )
+                    }
                 </div>
 
             </div>

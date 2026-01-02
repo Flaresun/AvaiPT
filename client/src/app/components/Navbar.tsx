@@ -76,10 +76,10 @@ const Navbar = () => {
                     <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                     {aboutMenu && (
                         <div className="cursor-pointer absolute top-[100%] right-[-40] flex flex-col bg-white shadow-lg px-6 py-4  items-center rounded-md text-nowrap">
-                            <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                            <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 gap-1 rounded-md">
                                 <a href="#" className="">Partners</a>
                             </div>
-                            <div onClick={() => router.push("/privacy")} className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                            <div onClick={() => router.push("/privacy")} className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                 <a className="">Privacy Policy</a>
                             </div>
                         </div>
@@ -94,22 +94,22 @@ const Navbar = () => {
                     </span>
                     {servicesMenu && (
                         <div className="cursor-pointer absolute top-[100%] right-[-40] flex flex-col bg-white shadow-lg px-6 py-4 items-center rounded-md text-nowrap ">
-                            <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-    ">
+                            <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 gap-1 rounded-    ">
                                 <a href="/servicesInHome" className="">In-Home Physical Therapy Evaluations</a>
                             </div>
-                            <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                            <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 gap-1 rounded-md">
                                 <a href="/servicesFollowUp" className="">Follow-up and Post-Operative Rehab</a>
                             </div>
-                            <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                            <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                 <a href="/servicesNeuromuscular" className="">Neuromuscular Re-education & Balance Training</a>
                             </div>
-                            <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                            <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                 <a href="/servicesTelehealth" className="">Telehealth Therapy Options</a>
                             </div>
-                            <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                            <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                 <a href="/servicesDischarge" className="">Discharge Planning & Care Coordination</a>
                             </div>
-                            <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                            <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                 <a href="/servicesStrength" className="">Strength Training & Functional Conditioning</a>
                             </div>
                             
@@ -138,10 +138,10 @@ const Navbar = () => {
                             {aboutMenu && (
                                  <div className="text-nowrap z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-6 py-4  items-center rounded-md">
 
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 gap-1 rounded-md">
                                         <a href="#" className="">Partners</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 gap-1 rounded-md">
                                         <a href="/privacy" className="">Privacy Policy</a>
                                     </div>
                                 </div>
@@ -152,22 +152,22 @@ const Navbar = () => {
                             <span className='transition delay-75 duration-300 ease-in-out'><IoIosArrowDown /></span>
                             {servicesMenu && (
                                  <div className="text-nowrap z-2 cursor-pointer absolute top-[100%] right-0 flex flex-col bg-white shadow-lg px-1 py-4  items-center rounded-md">
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 gap-1 rounded-md">
                                         <a href="/servicesInHome" className="">In-Home Physical Therapy Evaluations</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 gap-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 gap-1 rounded-md">
                                         <a href="/servicesFollowUp" className="">Follow-up and Post-Operative Rehab</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                         <a href="/servicesNeuromuscular" className="">Neuromuscular Re-education & Balance Training</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                         <a href="/servicesTelehealth" className="">Telehealth Therapy Options</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                         <a href="/servicesDischarge" className="">Discharge Planning & Care Coordination</a>
                                     </div>
-                                    <div className="flex hover:bg-sky-200 w-full items-center justify-center px-4 p-1 rounded-md">
+                                    <div className="flex hover:bg-sky-200 w-full items-start justify-start px-4 p-1 rounded-md">
                                         <a href="/servicesStrength" className="">Strength Training & Functional Conditioning</a>
                                     </div>
                                     
