@@ -1,16 +1,14 @@
-import React from 'react'
-import InHomePage from './components/InHomePage'
-import Navbar from '../components/Navbar'
+import type { Metadata } from "next";
 
-const page = () => {
-  return (
-    <div>
-      <div className="flex pb-20 bg-gray-50">
-          <Navbar />
-      </div>
-        <InHomePage />
-    </div>
-  )
+import ServiceLayout from "../components/ServiceLayout";
+import { servicePages } from "@/lib/servicePages";
+
+export const metadata: Metadata = {
+  title: "In-Home Physical Therapy Evaluations",
+  description:
+    "A licensed AVAI PT therapist visits your home to assess your mobility, review your history and build a personalized care plan.",
+};
+
+export default function Page() {
+  return <ServiceLayout content={servicePages.inHome} />;
 }
-
-export default page

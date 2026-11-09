@@ -1,61 +1,58 @@
-"use client";
-import React from "react"
-import map from "../assets/map.png"
-import Image from "next/image"
-import { useEffect } from "react"
+import Image from "next/image";
+
+import map from "../assets/map.png";
+import { site } from "@/lib/site";
+
+const sections = [
+  {
+    heading: "Serving communities across Ohio",
+    body: "We actively serve a growing list of counties throughout Ohio, including Cuyahoga, Franklin, Hamilton, Summit and Montgomery. To these communities we do our utmost to bring healing to their home.",
+  },
+  {
+    heading: "Our mission in every county we serve",
+    body: "Restore independence and improve quality of life, one home at a time. Whether patients are recovering from surgery, managing chronic conditions, or working to regain strength and balance, our therapists deliver expert care with compassion and clinical excellence.",
+  },
+  {
+    heading: "Why clients trust us",
+    body: "Inviting someone into your home for care is a big decision. Our licensed therapists are clinically skilled, empathetic and respectful, and we hold to HIPAA, Medicare and Ohio regulations so your care stays safe, compliant and personal.",
+  },
+];
+
 const Location = () => {
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add("show-class");
-
-        })
-    });
-    const hiddenElements = document.querySelectorAll(".hide-class")
-    hiddenElements.forEach((element) => observer.observe(element));
-  },[])
   return (
-    <div className="px-[2rem] md:px-[3rem] bg-gradient-to-b from-[#cac9d3] to-[#ffffff] pt-1 pb-5 mx-auto">
-      <div className="flex flex-col mt-20 ">
+    <section id="locations" className="bg-brand-cream">
+      <div className="mx-auto max-w-[82rem] px-5 py-20 lg:px-10 lg:py-24">
+        <p className="mb-4 flex items-center gap-2.5 text-sm font-semibold uppercase tracking-[0.08em] text-brand-teal">
+          <span className="block h-0.5 w-7 bg-brand-clay" />
+          Where we work
+        </p>
+        <h2 className="mb-12 max-w-[20ch] text-4xl font-extrabold leading-[1.08] tracking-tight text-brand-ink md:text-5xl">
+          Active across {site.counties.length}+ Ohio counties.
+        </h2>
 
-        <div className="hide-class flex items-center text-center justify-center mb-10">
-          <p className="text-5xl">Active Locations</p>
-        </div>
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+          <Image
+            src={map}
+            alt="Map of the Ohio counties served by AVAI PT"
+            className="h-auto w-full max-w-full"
+          />
 
-        <div className=" flex flex-col xl:flex-row justify-around items-center mx-auto ">
-
-          <div className="flex flex-col w-full xl:w-[150%]">
-            <div className="hide-class flex items-center justify-center">
-              <Image src={map} alt="" />
-            </div>
-            
+          <div className="flex flex-col gap-9">
+            {sections.map(({ heading, body }) => (
+              <div key={heading}>
+                <h3 className="mb-2 text-2xl font-bold tracking-tight text-brand-ink">
+                  {heading}
+                </h3>
+                <p className="text-base leading-relaxed text-brand-muted">
+                  {body}
+                </p>
+              </div>
+            ))}
           </div>
-
-          <div className="flex flex-col items-center gap-20 md:ml-10 hide-class max-w-4xl mx-auto ">
-
-            <div className="flex flex-col mb-5">
-              <h1 className="text-2xl">Serving Communities Across Ohio</h1>
-              <p className="text-lg font-light">At AVAI PT, we are proud to actively serve a growing list of counties throughout Ohio, including Cuyahoga, Franklin, Hamilton, Summit, Montgomery, and more. To these communities we do our utmost to bring healing to their home.</p>
-            </div>
-
-            <div className="flex flex-col mb-5">
-              <h1 className="text-2xl">Our Mission in Every County We Serve</h1>
-              <p className="text-lg font-light">Our mission is simple but powerful: to restore independence and improve quality of life, one home at a time. Whether patients are recovering from surgery, managing chronic conditions, or working to regain strength and balance, our therapists deliver expert care with compassion and clinical excellence. By meeting patients where they are, we remove barriers to recovery and help them thrive in their own environments.</p>
-            </div>
-
-            <div className="flex flex-col">
-              <h1 className="text-2xl">Why Clients Trust AVAI PT</h1>
-              <p className="text-lg font-light">We know inviting someone into your home for care is a big decision. That is why AVAI PT is built on transparency, professionalism, and personal connection. Our licensed therapists are not only clinically skilled but also empathetic, respectful, and committed to your well-being. With strict adherence to HIPAA, Medicare, and Ohio regulations, you can feel confident knowing your care is safe, compliant, and personalized.</p>
-            </div>
-
-          </div>
-
         </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Location
+export default Location;

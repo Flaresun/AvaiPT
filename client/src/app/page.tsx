@@ -1,25 +1,23 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TrustBar from "./components/TrustBar";
+import HowItWorks from "./components/HowItWorks";
 import Services from "./components/Services";
-import Pros from "./components/Pros";
-import Location from "./components/Location";
-import Footer from "./components/Footer";
-import "./components/Hero.css"
-import "./components/Animation.css"
 import Testimonials from "./components/Testimonials";
+import Location from "./components/Location";
+import Agencies from "./components/Agencies";
+import FinalCTA from "./components/FinalCTA";
+
 export default function Home() {
   return (
-    <div className="">
-      <div id="hero-cover" className="flex flex-col">
-        <Navbar />
-        <Hero />
-      </div>
-      
-      <Pros />
+    <>
+      <Hero />
+      <TrustBar />
+      <HowItWorks />
       <Services />
       <Testimonials />
       <Location />
-      <Footer />
-    </div>
+      <Agencies />
+      <FinalCTA />
+    </>
   );
 }

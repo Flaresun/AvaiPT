@@ -1,14 +1,13 @@
-import React from 'react'
-import Contact from './component/Contact'
-import Navbar from '../components/Navbar'
+import type { Metadata } from "next";
 
-const page = () => {
-  return (
-    <div className="min-h-screen bg-slate-200">
-      <Navbar />
-      <Contact/>
-    </div>
-  )
+import Contact from "./component/Contact";
+
+export const metadata: Metadata = {
+  title: "Book a Consultation",
+  description:
+    "Request an in-home physical therapy consultation with AVAI PT. Tell us about you and when you're free, and we'll get back to you shortly.",
+};
+
+export default function ContactPage() {
+  return <Contact />;
 }
-
-export default page

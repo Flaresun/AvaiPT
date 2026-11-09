@@ -5,11 +5,34 @@
 */
 @custom-variant dark (&:is(.dark *));
 
+/* ---------------------------------------------------------------
+   AVAI PT brand tokens. Teal and sage are sampled from the logo;
+   clay is the action colour, reserved for primary CTAs only.
+   Every pairing below meets WCAG AA for body text.
+   --------------------------------------------------------------- */
+@theme {
+  --color-brand-ink: #15201D;
+  --color-brand-teal: #1F5A54;
+  --color-brand-teal-dark: #17433F;
+  --color-brand-teal-deep: #15332F;
+  --color-brand-teal-card: #1C423C;
+  --color-brand-teal-line: #2F6056;
+  --color-brand-night: #101D1A;
+  --color-brand-sage: #9CC7B4;
+  --color-brand-sage-pale: #E6EFE9;
+  --color-brand-clay: #A8482A;
+  --color-brand-clay-dark: #8E3C23;
+  --color-brand-cream: #FBF9F5;
+  --color-brand-muted: #4D5A56;
+  --color-brand-line: #E8E3D9;
+  --color-brand-on-dark: #D3E4DB;
+  --color-brand-on-dark-muted: #8FB3A5;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -132,7 +155,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    font-size: 18px;
+  }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Anchor targets clear the fixed navbar. */
+  [id] {
+    scroll-margin-top: 6rem;
   }
 }

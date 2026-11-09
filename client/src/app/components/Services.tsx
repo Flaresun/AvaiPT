@@ -1,103 +1,60 @@
-"use client";
-import React from 'react'
-import Image from 'next/image';
-import athome from "../assets/athome_pt.jpg"
-import balance from "../assets/balance_pt.jpg"
-import followUp from "../assets/followup_pt.jpg"
-import freept from "../assets/free_pt.jpg"
-import telehealth from "../assets/telehealth_pt.jpg"
-import {useRouter} from "next/navigation";
-import discharge from "../assets/discharge_pt.jpg"
-import { useEffect } from 'react';
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+import { services } from "@/lib/services";
+import { site } from "@/lib/site";
+
 const Services = () => {
-
-    // Need image title, description, link for more 
-    const router = useRouter();
-    const services = [
-        {
-            image: athome,
-            title: "In-Home Physical Therapy Evaluations",
-            desc: "Comprehensive assessments conducted in the comfort of your home to create personalized therapy plans tailored to your needs.",
-            link: "/servicesInHome"
-        },
-        {
-            image: followUp,
-            title: "Follow-up and Post-Operative Rehab",
-            desc: "Focused rehabilitation sessions that support recovery after surgery and ensure optimal outcomes through consistent follow-ups.",
-            link: "/servicesFollowUp"
-        },
-        {
-            image: balance,
-            title: "Neuromuscular Re-education & Balance Training",
-            desc: "Specialized therapies designed to improve coordination, strength, and balance—reducing the risk of falls and enhancing mobility.",
-            link: "/servicesNeuromuscular"
-        },
-        {
-            image: telehealth,
-            title: "Telehealth Therapy Options",
-            desc: "Secure, remote physical therapy sessions that bring professional guidance to your screen—ideal for convenience and flexibility.",
-            link: "/servicesTelehealth"
-        },
-        {
-            image: discharge,
-            title: "Discharge Planning & Care Coordination",
-            desc: "Collaborative planning to ensure smooth transitions from therapy to independent living, with coordinated care across providers.",
-            link: "/servicesDischarge"
-        },
-        {
-            image: freept,
-            title: "Strength Training & Functional Conditioning",
-            desc: "We design customized strength-building programs to enhance stability, endurance, and functional performance.",
-            link: "/servicesStrength"
-        }
-    ];
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("show-class");
-
-            })
-        });
-        const hiddenElements = document.querySelectorAll(".hide-class")
-        hiddenElements.forEach((element) => observer.observe(element));
-    },[])
-
   return (
-    <div className='px-[3rem] pb-5 bg-gradient-to-b from-[#fffffff] to-[#cac9d3]'>
-        <div className="flex flex-col mt-10 md:mt-30 items-center text-center text-4xl">
-
-            <div className="flex text-5xl my-5 hide-class text-green-900">    
-                Our Services
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6  ">
-                {services.map((value, index) => (
-
-                    <div key={index} className="services-class hide-class flex flex-col p-4 rounded-4xl max-w-xl shadow-md bg-white">
-                        <div className=" bg-gray-100  mb-4 flex items-center justify-center h-auto object-cover">
-                            <Image src={value.image} alt="" className='inline' draggable="false" />
-                        </div>
-
-                        <div className="flex flex-col ">
-                            <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                            <p className="text-xl text-gray-600 mb-4">{value.desc}</p>
-                        </div>
-                        <div className="flex items-center justify-center text-xl ">
-                            <button onClick={() => router.push(value.link)}
-                                className="w-max cursor-pointer px-4 py-2 bg-sky-300 rounded-full  active:scale-[.95]">
-                                Explore
-                            </button>
-                        </div>
-                        
-
-                    </div>
-                ))}
-            </div>
-
+    <section id="services" className="bg-brand-sage-pale">
+      <div className="mx-auto max-w-[82rem] px-5 py-20 lg:px-10 lg:py-24">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="mb-4 flex items-center gap-2.5 text-sm font-semibold uppercase tracking-[0.08em] text-brand-teal">
+              <span className="block h-0.5 w-7 bg-brand-clay" />
+              What we do
+            </p>
+            <h2 className="max-w-[20ch] text-4xl font-extrabold leading-[1.08] tracking-tight text-brand-ink md:text-5xl">
+              Six ways we help you move again.
+            </h2>
+          </div>
+          <a
+            href={`tel:${site.phone.replace(/\D/g, "")}`}
+            className="inline-flex items-center gap-2 text-lg font-semibold text-brand-teal hover:text-brand-teal-dark"
+          >
+            Not sure which you need? Call us
+            <ArrowRight size={18} aria-hidden />
+          </a>
         </div>
-    </div>
-  )
-}
 
-export default Services
+        <div className="mt-12 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          {services.map(({ href, title, desc, Icon }) => (
+            <article
+              key={href}
+              className="flex flex-col gap-3.5 rounded-xl bg-white p-8"
+            >
+              <span className="flex size-13 items-center justify-center rounded-xl bg-brand-sage-pale">
+                <Icon size={24} className="text-brand-teal" aria-hidden />
+              </span>
+              <h3 className="text-xl font-bold leading-snug tracking-tight text-brand-ink">
+                {title}
+              </h3>
+              <p className="text-base leading-relaxed text-brand-muted">
+                {desc}
+              </p>
+              <Link
+                href={href}
+                className="mt-auto inline-flex items-center gap-1.5 pt-3 text-base font-semibold text-brand-teal hover:text-brand-teal-dark"
+              >
+                Explore
+                <ArrowRight size={15} aria-hidden />
+              </Link>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;

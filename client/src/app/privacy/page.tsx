@@ -1,14 +1,13 @@
-import React from 'react'
-import Privacy from './components/Privacy'
-import Navbar from '../components/Navbar'
+import type { Metadata } from "next";
 
-const page = () => {
-  return (
-    <div className='bg-gray-50'>
-        <Navbar />
-        <Privacy />
-    </div>
-  )
+import Privacy from "./components/Privacy";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How AVAI PT LLC collects, uses, discloses and protects your personal health information under HIPAA and applicable state law.",
+};
+
+export default function PrivacyPage() {
+  return <Privacy />;
 }
-
-export default page

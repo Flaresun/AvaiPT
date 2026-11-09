@@ -1,17 +1,14 @@
-import React from 'react'
-import DischargePlanningPage from './components/DischargePlanningPage'
-import Navbar from '../components/Navbar'
+import type { Metadata } from "next";
 
-const page = () => {
-  return (
-    <div>
-        <div className="flex pb-20 bg-gray-50">
-            <Navbar />
-        </div>
-            
-        <DischargePlanningPage />
-    </div>
-  )
+import ServiceLayout from "../components/ServiceLayout";
+import { servicePages } from "@/lib/servicePages";
+
+export const metadata: Metadata = {
+  title: "Discharge Planning & Care Coordination",
+  description:
+    "AVAI PT coordinates your transition from active therapy to independent living, aligning physicians, caregivers and family on next steps.",
+};
+
+export default function Page() {
+  return <ServiceLayout content={servicePages.discharge} />;
 }
-
-export default page

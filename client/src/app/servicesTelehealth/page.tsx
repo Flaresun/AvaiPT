@@ -1,16 +1,14 @@
-import React from 'react'
-import TelehealthPage from './components/TelehealthPage'
-import Navbar from '../components/Navbar'
+import type { Metadata } from "next";
 
-const page = () => {
-  return (
-    <div>
-      <div className="flex pb-20 bg-gray-50">
-          <Navbar />
-      </div>
-        <TelehealthPage />
-    </div>
-  )
+import ServiceLayout from "../components/ServiceLayout";
+import { servicePages } from "@/lib/servicePages";
+
+export const metadata: Metadata = {
+  title: "Telehealth Therapy Options",
+  description:
+    "Secure, HIPAA-compliant virtual physical therapy sessions with licensed AVAI PT therapists, from the comfort of your home.",
+};
+
+export default function Page() {
+  return <ServiceLayout content={servicePages.telehealth} />;
 }
-
-export default page

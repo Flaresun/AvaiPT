@@ -1,5 +1,9 @@
 "use client";
 import React, { useState } from "react";
+import { Phone } from "lucide-react";
+
+import TrustBar from "@/app/components/TrustBar";
+import { site } from "@/lib/site";
 
 export default function ContactConsultForm({
   title = "Book a Consultation",
@@ -92,20 +96,49 @@ export default function ContactConsultForm({
   }
 
 
-  return (
-    <div className="bg-gradient-to-br text-slate-800 py-20 px-4">
-      <div className="mx-auto max-w-3xl">
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{title}</h1>
-          {subtitle && <p className="mt-2 text-slate-600 max-w-xl mx-auto">{subtitle}</p>}
-        </div>
+  const tel = site.phone.replace(/\D/g, "");
 
-        <form onSubmit={handleSubmit} noValidate className="bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-6">
+  return (
+    <>
+      <section className="relative isolate overflow-hidden bg-brand-teal-deep">
+        <div
+          aria-hidden
+          className="absolute -right-24 -top-28 size-[26rem] rounded-full border-[2.75rem] border-brand-sage/10"
+        />
+        <div className="relative mx-auto max-w-[82rem] px-5 pb-16 pt-32 lg:px-10 lg:pb-20 lg:pt-40">
+          <p className="mb-4 flex items-center gap-2.5 text-sm font-semibold uppercase tracking-[0.08em] text-brand-sage">
+            <span className="block h-0.5 w-7 bg-brand-clay" />
+            Get in touch
+          </p>
+          <h1 className="max-w-[18ch] text-[2.25rem] font-extrabold leading-[1.06] tracking-tight text-white md:text-5xl xl:text-[3.5rem]">
+            {title}
+          </h1>
+          {subtitle && (
+            <p className="mt-5 max-w-[46ch] text-lg leading-relaxed text-brand-on-dark md:text-xl">
+              {subtitle}
+            </p>
+          )}
+          <a
+            href={`tel:${tel}`}
+            className="mt-8 inline-flex min-h-13 items-center justify-center gap-2.5 rounded-lg bg-brand-clay px-7 text-base font-semibold text-white transition-colors hover:bg-brand-clay-dark"
+          >
+            <Phone size={17} aria-hidden />
+            Prefer to call? {site.phone}
+          </a>
+        </div>
+      </section>
+
+      <TrustBar />
+
+      <div className="bg-brand-cream px-5 py-20 text-brand-ink lg:py-24">
+        <div className="mx-auto max-w-3xl">
+
+        <form onSubmit={handleSubmit} noValidate className="space-y-6 rounded-2xl border border-brand-line bg-white p-6 md:p-8">
           {/* Name Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* First Name */}
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-slate-700">First name</label>
+              <label htmlFor="firstName" className="block text-sm font-semibold text-brand-ink">First name</label>
               <input
                 id="firstName"
                 type="text"
@@ -113,14 +146,14 @@ export default function ContactConsultForm({
                 onChange={(e) => update("firstName", e.target.value)}
                 onBlur={() => setErrors((e) => ({ ...e, ...validate(form) }))}
                 required
-                className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5"
+                className="mt-1 min-h-12 w-full rounded-lg border border-brand-line bg-white px-4 py-2.5 text-base text-brand-ink focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-sage"
                 placeholder="Jane"
               />
               {errors.firstName && <p className="mt-1 text-sm text-rose-600">{errors.firstName}</p>}
             </div>
             {/* Last Name */}
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-slate-700">Last name</label>
+              <label htmlFor="lastName" className="block text-sm font-semibold text-brand-ink">Last name</label>
               <input
                 id="lastName"
                 type="text"
@@ -128,7 +161,7 @@ export default function ContactConsultForm({
                 onChange={(e) => update("lastName", e.target.value)}
                 onBlur={() => setErrors((e) => ({ ...e, ...validate(form) }))}
                 required
-                className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5"
+                className="mt-1 min-h-12 w-full rounded-lg border border-brand-line bg-white px-4 py-2.5 text-base text-brand-ink focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-sage"
                 placeholder="Doe"
               />
               {errors.lastName && <p className="mt-1 text-sm text-rose-600">{errors.lastName}</p>}
@@ -137,7 +170,7 @@ export default function ContactConsultForm({
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-slate-700">Email</label>
+            <label htmlFor="email" className="block text-sm font-semibold text-brand-ink">Email</label>
             <input
               id="email"
               type="email"
@@ -145,7 +178,7 @@ export default function ContactConsultForm({
               onChange={(e) => update("email", e.target.value)}
               onBlur={() => setErrors((e) => ({ ...e, ...validate(form) }))}
               required
-              className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5"
+              className="mt-1 min-h-12 w-full rounded-lg border border-brand-line bg-white px-4 py-2.5 text-base text-brand-ink focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-sage"
               placeholder="you@example.com"
             />
             {errors.email && <p className="mt-1 text-sm text-rose-600">{errors.email}</p>}
@@ -155,7 +188,7 @@ export default function ContactConsultForm({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Date */}
             <div>
-              <label htmlFor="date" className="block text-sm font-medium text-slate-700">Date</label>
+              <label htmlFor="date" className="block text-sm font-semibold text-brand-ink">Date</label>
               <input
                 id="date"
                 type="date"
@@ -164,13 +197,13 @@ export default function ContactConsultForm({
                 onBlur={() => setErrors((e) => ({ ...e, ...validate(form) }))}
                 required
                 min={new Date().toISOString().split("T")[0]}
-                className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5"
+                className="mt-1 min-h-12 w-full rounded-lg border border-brand-line bg-white px-4 py-2.5 text-base text-brand-ink focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-sage"
               />
               {errors.date && <p className="mt-1 text-sm text-rose-600">{errors.date}</p>}
             </div>
             {/* Time */}
             <div>
-              <label htmlFor="time" className="block text-sm font-medium text-slate-700">Time</label>
+              <label htmlFor="time" className="block text-sm font-semibold text-brand-ink">Time</label>
               <input
                 id="time"
                 type="time"
@@ -178,7 +211,7 @@ export default function ContactConsultForm({
                 onChange={(e) => update("time", e.target.value)}
                 onBlur={() => setErrors((e) => ({ ...e, ...validate(form) }))}
                 required
-                className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5"
+                className="mt-1 min-h-12 w-full rounded-lg border border-brand-line bg-white px-4 py-2.5 text-base text-brand-ink focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-sage"
               />
               {errors.time && <p className="mt-1 text-sm text-rose-600">{errors.time}</p>}
             </div>
@@ -186,7 +219,7 @@ export default function ContactConsultForm({
 
           {/* Message */}
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-slate-700">Message</label>
+            <label htmlFor="message" className="block text-sm font-semibold text-brand-ink">Message</label>
             <textarea
               id="message"
               value={form.message}
@@ -195,18 +228,18 @@ export default function ContactConsultForm({
               required
               rows={6}
               placeholder="Briefly describe what you'd like to discuss."
-              className="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5"
+              className="mt-1 min-h-12 w-full rounded-lg border border-brand-line bg-white px-4 py-2.5 text-base text-brand-ink focus:border-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-sage"
             />
             {errors.message && <p className="mt-1 text-sm text-rose-600">{errors.message}</p>}
           </div>
 
           {/* Submit */}
           <div className="flex items-center justify-between gap-4">
-            <p className="text-xs text-slate-500">We respect your privacy. We&apos;ll only use your info to contact you about this consultation.</p>
+            <p className="text-xs text-brand-muted">We respect your privacy. We&apos;ll only use your info to contact you about this consultation.</p>
             <button
               type="submit"
               disabled={status.state === "submitting"}
-              className={`cursor-pointer rounded-2xl bg-slate-900 px-5 py-3 text-white font-medium shadow-lg disabled:opacity-60`}
+              className="inline-flex min-h-13 cursor-pointer items-center justify-center rounded-lg bg-brand-teal px-7 text-base font-semibold text-white transition-colors hover:bg-brand-teal-dark disabled:opacity-60"
             >
               {status.state === "submitting" ? <span>Sending…</span> : "Send request"}
             </button>
@@ -226,8 +259,9 @@ export default function ContactConsultForm({
             </div>
           )}
         </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
